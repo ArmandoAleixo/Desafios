@@ -7,14 +7,14 @@ public class Banco {
         Conta conta = new Conta();
         ContaService contaService = new ContaService();
     
-        contaService.setSenha(1234);
+        
         
         
 
       
         JOptionPane.showMessageDialog(null, "Bem vindo ao banco");
 
-        String senha = JOptionPane.showInputDialog(null, "Digite o numero da conta: ");
+        contaService.setSenha(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o numero da conta: ")));
         contaService.setNomeconta(JOptionPane.showInputDialog(null, "Digite o usuario: "));
 
         int escolha = JOptionPane.showConfirmDialog(null, "Existe um deposito inicial?");

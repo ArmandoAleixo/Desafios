@@ -1,10 +1,17 @@
 package Desafio3;
 
-class Employee {
-    public String nome;
-    public double GrossSalary;
+public class Employee {
+    private String nome;
+    private double salarioBruto;
+    private final double taxa = 1.1;
 
-    
+    public Employee() {
+    }
+
+    public Employee(String nome, double salarioBruto) {
+        this.nome = nome;
+        this.salarioBruto = salarioBruto;
+    }
 
     public String getNome() {
         return nome;
@@ -14,22 +21,25 @@ class Employee {
         this.nome = nome;
     }
 
-    public double getGrossSalary() {
-        return GrossSalary;
+    public double getSalarioBruto() {
+        return salarioBruto;
     }
 
-    public void setGrossSalary(double grossSalary) {
-        GrossSalary = grossSalary;
+    public void setSalarioBruto(double salarioBruto) {
+        this.salarioBruto = salarioBruto;
+    }
+
+    public double getTaxa() {
+        return taxa;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "nome='" + nome + '\'' +
-                '}';
+        return
+                "Nome= " + nome + ", Salario bruto= " + salarioBruto ;
     }
-
 }
+
                 
          
 

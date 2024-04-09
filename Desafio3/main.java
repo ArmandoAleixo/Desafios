@@ -2,44 +2,38 @@ package Desafio3;
 
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class main {
-    public static void main(String[] args){
-    Scanner sc =  new Scanner (System.in);
-    Employee employee = new Employee();
-    double salario;
-    double taxa;
-    double taxa2;
-    Employee employee2 = new Employee();
+    public static void main(String[] args) {
+        Employee funcionario1 = new Employee();
+        Employee funcionario2 = new Employee();
+        EmployeeService service = new EmployeeService();
+        Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Digite o nome do funcionario :");
-    employee.setNome(sc.nextLine());
+        System.out.println("Funcionario 1 digite nome");
+        funcionario1.setNome(scanner.next());
+        System.out.println("Funcionario 1 digite seu salario bruto");
+        funcionario1.setSalarioBruto(scanner.nextDouble());
+        System.out.println(funcionario1.toString());
+        service.obterSalarioLiquido(funcionario1);
 
-    System.out.println("Digite o salario :");
-    employee.setGrossSalary(sc.nextDouble());
+        System.out.println("Funcionario 2 digite nome");
+        funcionario2.setNome(scanner.next());
+        System.out.println("Funcionario 2 digite seu salario bruto");
+        funcionario2.setSalarioBruto(scanner.nextDouble());
+        System.out.println(funcionario2.toString());
 
-    System.out.println("informe a taxa :");
-    taxa = sc.nextDouble();
 
-    double salarioL = (taxa / 100) * employee.getGrossSalary() + employee.getGrossSalary();
-    sc.nextLine();
+        System.out.println("O funcionario 2 recebeu um aumento!");
+        service.aumentoSalario(funcionario2);
 
-    System.out.println("Digite o nome do outro funcionario :");
-    employee2.setNome(sc.nextLine());
+        System.out.println(funcionario1.toString());
+        System.out.println(funcionario2.toString());
 
-    System.out.println("Digite o salario :");
-    employee2.setGrossSalary(sc.nextDouble());
-
-    System.out.println("informe a taxa :");
-     taxa2 = sc.nextDouble();
-
-    double salarioL2 = (taxa2 / 100) * employee2.getGrossSalary() + employee2.getGrossSalary();
-
-    System.out.println("Dados do funcionario 1: " + employee.getNome() +"/ Salario :" + employee.getGrossSalary() + "/ Salario Liquido :" + salarioL);
-
-    System.out.println("Dados do funcionario 2: " + employee2.getNome() +"/ Salario :" + employee2.getGrossSalary() + "/ Salario Liquido :" + salarioL2);
-    
     }
 }
+
        
       
         
